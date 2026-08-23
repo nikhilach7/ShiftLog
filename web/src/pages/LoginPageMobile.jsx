@@ -19,7 +19,7 @@ export default function LoginPageMobile() {
     setLoading(true);
 
     try {
-      const result = await apiPost('/auth/login', { username, password });
+      const result = await apiPost('/auth/login', { email: username, password });
       signIn(result.token, result.user);
       navigate('/dashboard');
     } catch (err) {
