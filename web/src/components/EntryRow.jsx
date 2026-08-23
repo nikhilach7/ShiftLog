@@ -4,8 +4,6 @@ export default function EntryRow({ entry }) {
   const [minutes] = useState(entry.minutes);
   const [expanded, setExpanded] = useState(false);
 
-  const localTime = new Date(entry.occurredAt || entry.createdAt).toLocaleString();
-
   return (
     <div className="entry-row" onClick={() => setExpanded(!expanded)}>
       <div className="entry-main">
@@ -21,7 +19,7 @@ export default function EntryRow({ entry }) {
 
       {expanded && (
         <div className="entry-detail">
-          <div>Local time: {localTime}</div>
+          <div>Time: {entry.displayTime}</div>
           <div>Raw occurred_at: {String(entry.occurredAt)}</div>
           <div>Raw created_at: {String(entry.createdAt)}</div>
         </div>
