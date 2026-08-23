@@ -5,8 +5,6 @@ const router = express.Router();
 
 // The uptime monitor polls this from outside our own origin, so it is open.
 router.get('/health', (req, res) => {
-  res.setHeader('Access-Control-Allow-Origin', '*');
-
   let database = 'connected';
 
   try {

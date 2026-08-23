@@ -7,7 +7,7 @@ const config = require('../config');
  */
 module.exports = function cors(req, res, next) {
   res.setHeader('Access-Control-Allow-Origin', config.allowedOrigin);
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
   res.setHeader('Access-Control-Allow-Credentials', 'true');
   res.setHeader('Vary', 'Origin');
 
