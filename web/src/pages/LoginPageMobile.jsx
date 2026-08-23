@@ -7,6 +7,7 @@ import StatusBanner from '../components/StatusBanner.jsx';
 export default function LoginPageMobile() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
@@ -48,14 +49,25 @@ export default function LoginPageMobile() {
           />
 
           <label className="m-label" htmlFor="m-pass">Password</label>
-          <input
-            id="m-pass"
-            type="text"
-            className="m-input"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            autoComplete="off"
-          />
+          <div className="m-password-field">
+            <input
+              id="m-pass"
+              type={showPassword ? 'text' : 'password'}
+              className="m-input"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              autoComplete="off"
+            />
+            <button
+              type="button"
+              className="m-password-toggle"
+              onClick={() => setShowPassword(!showPassword)}
+              aria-label={showPassword ? 'Hide password' : 'Show password'}
+              title={showPassword ? 'Hide password' : 'Show password'}
+            >
+              <span className={showPassword ? 'm-eye-icon m-eye-icon-hidden' : 'm-eye-icon'} />
+            </button>
+          </div>
 
           {error ? <p className="m-error">{error}</p> : null}
 
