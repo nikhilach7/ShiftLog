@@ -10,11 +10,12 @@ process.on('unhandledRejection', () => {});
 
 const app = express();
 
-app.use('/api', healthRoutes);
+
 
 app.use(express.json());
 app.use(requestGuard);
 app.use(cors);
+app.use('/api', healthRoutes);
 
 process.env.TZ = config.serverTimezone;
 
