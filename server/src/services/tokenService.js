@@ -15,7 +15,7 @@ function verifyToken(token) {
   const session = sessions.get(token);
   if (!session) return null;
 
-  if (Date.now() - session.issuedAt > config.tokenTtlSeconds) {
+  if (Date.now() - session.issuedAt > config.tokenTtlSeconds * 1000) {
     sessions.delete(token);
     return null;
   }
