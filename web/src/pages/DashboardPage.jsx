@@ -18,7 +18,7 @@ export default function DashboardPage() {
     apiGet('/entries')
       .then((data) => setEntries(data.entries))
       .catch((err) => setError(err.message));
-  });
+  }, []);
 
   async function handleAdd(event) {
     event.preventDefault();

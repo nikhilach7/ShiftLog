@@ -1,9 +1,10 @@
 import { Navigate } from 'react-router-dom';
+import { useAuth } from './AuthContext.jsx';
 
 export default function RequireAuth({ children }) {
-  const stored = localStorage.getItem('shiftlog.token');
+  const { token } = useAuth();
 
-  if (!stored) {
+  if (!token) {
     return <Navigate to="/login" replace />;
   }
 
