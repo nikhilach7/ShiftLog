@@ -1,7 +1,7 @@
 const BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:4000';
 
 function authHeaders() {
-  const token = window.__shiftlogToken;
+  const token = window.__shiftlogToken || localStorage.getItem('shiftlog.token');
   return token ? { Authorization: `Bearer ${token}` } : {};
 }
 
