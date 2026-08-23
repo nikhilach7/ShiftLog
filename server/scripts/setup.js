@@ -53,8 +53,8 @@ async function main() {
   );
 
   await pool.query(
-    `INSERT INTO users (email, full_name, password_hash, role)
-     VALUES ($1, $2, $3, $4)`,
+    `INSERT INTO users (email, full_name, password_hash, role, is_active)
+     VALUES ($1, $2, $3, $4, true)`,
     ['night@shiftlog.test', 'Arjun Kapoor', hash, 'operator']
   );
 
