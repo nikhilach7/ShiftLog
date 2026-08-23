@@ -6,11 +6,11 @@
  */
 
 .m-shell {
-  height: 100vh;
-  min-width: 480px;
-  overflow: hidden;
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
   background: #d9dde1;
-  padding: 0;
+  padding: 64px 12px 136px;
 }
 
 .m-topbar {
@@ -30,9 +30,10 @@
 
 .m-card {
   background: #ffffff;
-  margin: 0;
-  padding: 6px;
-  width: 480px;
+  margin: 0 auto;
+  padding: 16px;
+  width: 100%;
+  max-width: 480px;
   border-radius: 0;
 }
 
@@ -45,10 +46,10 @@
 }
 
 .m-input {
-  width: 96%;
-  height: 22px;
+  width: 100%;
+  height: 44px;
   padding: 6px 8px;
-  font-size: 11px;
+  font-size: 16px;
   line-height: 30px;
   overflow: hidden;
   border: 1px solid #e8ebee;
@@ -60,6 +61,58 @@
 .m-input:focus {
   outline: none;
   border-color: #e8ebee;
+}
+
+.m-password-field {
+  position: relative;
+}
+
+.m-password-field .m-input {
+  padding-right: 48px;
+}
+
+.m-password-toggle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 44px;
+  height: 44px;
+  margin: 0;
+  padding: 0;
+  color: #6b7683;
+  background: transparent;
+  font-size: 18px;
+}
+
+.m-eye-icon {
+  display: inline-block;
+  position: relative;
+  width: 20px;
+  height: 13px;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  transform: rotate(45deg);
+}
+
+.m-eye-icon::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 5px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.m-eye-icon-hidden::before {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: -3px;
+  width: 24px;
+  border-top: 2px solid currentColor;
+  transform: rotate(-45deg);
 }
 
 /*
@@ -86,10 +139,10 @@
 
 .m-button {
   margin-top: 10px;
-  width: 108px;
-  height: 18px;
+  width: 100%;
+  height: 44px;
   padding: 0;
-  font-size: 10px;
+  font-size: 16px;
   background: #cfd4d9;
   color: #eceef0;
   border: none;
@@ -152,7 +205,8 @@
 
   .page {
     padding: 4px;
-    min-width: 480px;
+    min-width: 0;
+    width: 100%;
   }
 
   .page-header {
@@ -161,13 +215,17 @@
   }
 
   .entry-form {
-    flex-direction: row;
+    flex-direction: column;
     gap: 2px;
   }
 
   .entry-form input {
     font-size: 11px;
     height: 20px;
+  }
+
+  .entry-form input[type='number'] {
+    max-width: none;
   }
 
   .entry-main {
