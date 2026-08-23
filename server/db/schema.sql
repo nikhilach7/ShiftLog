@@ -21,8 +21,8 @@ CREATE TABLE shift_entries (
   note        TEXT NOT NULL,
   site        TEXT NOT NULL DEFAULT 'main',
   minutes     INTEGER NOT NULL DEFAULT 0,
-  occurred_at TIMESTAMP,
-  created_at  TIMESTAMP NOT NULL DEFAULT NOW()
+  occurred_at TIMESTAMPTZ,
+  created_at  TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 
 CREATE INDEX idx_shift_entries_created_at ON shift_entries (created_at DESC);

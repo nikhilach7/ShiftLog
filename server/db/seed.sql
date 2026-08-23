@@ -2,6 +2,8 @@
 -- Applied automatically by scripts/setup.js after the user accounts exist.
 -- Rows below were exported from the old spreadsheet the floor supervisors used.
 
+SET TIME ZONE 'America/New_York';
+
 INSERT INTO shift_entries (user_id, note, site, minutes, occurred_at, created_at) VALUES
   (1, 'Line 2 belt tension check', 'main',    45, '2026-03-01 06:15:00', '2026-03-01 06:20:00'),
   (1, 'Replaced sensor on packer 4', 'main',  90, '2026-03-01 08:00:00', '2026-03-01 08:10:00'),

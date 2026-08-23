@@ -5,7 +5,9 @@
  * second site in another region. Some of this file predates that change.
  */
 
-const DISPLAY_TIMEZONE = 'Asia/Kabul';
+const config = require('../config');
+
+const DISPLAY_TIMEZONE = config.serverTimezone;
 
 function nowIso() {
   return new Date().toISOString();
