@@ -1,7 +1,8 @@
 # ShiftLog
 
-ShiftLog is a small shift activity app for two sites: `main` and `north`.
-Users can sign in, view shift entries, add entries, and remove entries.
+A shift logging application for managing work-shift entries across multiple sites.
+
+The application provides authenticated users with a dashboard to view, create, update, and delete shift entries, along with reporting/export functionality and a responsive mobile experience.
 
 ## Features
 
@@ -39,7 +40,7 @@ Set the API address in `web/.env.local`:
 
 ```text
 VITE_API_URL=http://localhost:4000
-``
+```
 
 ## Install
 
