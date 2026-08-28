@@ -17,7 +17,7 @@ The application provides authenticated users with a dashboard to view, create, u
 
 - Node.js 18 or newer
 - npm
-- A cloud PostgreSQL database
+- A cloud PostgreSQL database like neon,supabase
 
 ## Configuration
 
@@ -142,8 +142,4 @@ ShiftLog/
 │   ├── package.json
 │   └── .env.example
 │
-├── FINDINGS.md
-├── DECISIONS.md
-├── LIMITS.md
-├── AI_LOG.md
 └── README.md
